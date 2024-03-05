@@ -1,0 +1,38 @@
+---
+title: "Practical_Exam_Pama"
+author: "MIKO PAMA - BSIT 2B"
+date: "2024-03-05"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#A.
+warpbreaks
+
+#1.
+print(is.numeric(warpbreaks$warpbreaks))
+print(is.integer(warpbreaks$warpbreaks))
+
+
+print(is.numeric(warpbreaks$wool))
+print(is.integer(warpbreaks$wool))
+
+print(is.numeric(warpbreaks$tension))
+print(is.integer(warpbreaks$tension))
+
+#2
+warpbreaks
+class(warpbreaks$warpbreaks)
+warpbreaks$warpbreaks <- ifelse(is.numeric(warpbreaks$breaks),
+as.integer(warpbreaks$warpbreaks),
+warpbreaks$warpbreaks
+
+cat(warpbreaks)
+
+#B
+#1
+file <- readLines("PracticalExam/exampleFile")
+file
+
