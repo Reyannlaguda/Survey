@@ -9,7 +9,7 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r 1}
+```{r mov1}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -43,10 +43,12 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "WOnka.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
-```{r 2}
+```{r mov2}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -80,10 +82,13 @@ for (page_num in 2:14) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "DarkKnight.csv", row.names = FALSE)
+
+print(data.frame)
+
 ```
 
-```{r 3}
+```{r mov3}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -117,10 +122,12 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "LordOfTheRings.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
-```{r 4}
+```{r mov4}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -154,10 +161,13 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+
+write.csv(reviews, file = "SpritedAway.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
-```{r 5}
+```{r mov5}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -191,10 +201,13 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+
+write.csv(reviews, file = "Parasite.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
-```{r 6}
+```{r mov6}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -228,10 +241,13 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+
+write.csv(reviews, file = "WALL-E.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
-```{r 7}
+```{r mov7}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -265,10 +281,13 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+
+write.csv(reviews, file = "Coco.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
-```{r 8}
+```{r mov8}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -302,10 +321,13 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+
+write.csv(reviews, file = "Toy Story.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
-```{r 9}
+```{r mov9}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -339,10 +361,13 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+
+write.csv(reviews, file = "Joker.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
-```{r 10}
+```{r mov10}
 library(rvest)
 library(dplyr)
 library(purrr)
@@ -360,7 +385,7 @@ extract_review_info <- function(review_node) {
   review <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
-    title = c("Avengers: Endgame"),
+    title = c("Avengers Endgame"),
     username = username,
     date = date,
     stars = as.numeric(stars),
@@ -376,5 +401,8 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+
+write.csv(reviews, file = "Avengers.csv", row.names = FALSE)
+
+print(data.frame)
 ```
