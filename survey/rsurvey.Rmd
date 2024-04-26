@@ -1,0 +1,12 @@
+---
+title: "SURVEY"
+author: "Miko Pama BSIT 2-B"
+date: "2024-04-23"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+library(readxl)
