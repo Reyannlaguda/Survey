@@ -5,8 +5,79 @@ date: "2024-04-23"
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+```{r number}
+library(readxl)
+library(dplyr)
+library(ggplot2)
+
 ```
 
-library(readxl)
+
+``` {r number1}
+responses <- read_excel("/cloud/project/survey/responses.xlsx")
+View(responses)
+
+
+```
+
+
+```{r number2}
+(responses$Age <- factor(responses$Age))
+(responses$Sex <- factor(responses$Sex))
+(responses$School <-factor(responses$School))
+(responses$Course <-factor(responses$Course))
+(responses$year <-factor(responses$YEAR))
+(responses$SECTION <-factor(responses$SECTION))
+
+# Remove "\r\n" from the column names
+names(responses) <- gsub("\\r\\n", "", names(responses))
+
+
+```
+
+
+```{r number3}
+(counts_sex <- table(responses$Sex))
+pie(counts_sex, labels = paste(names(counts_sex), ": ", counts_sex), main = "Sex Distribution")
+```
+
+```{r number4}
+(school_counts <- table(responses$School))
+
+
+```
+
+
+```{r number5} 
+
+
+# Convert the Age column to numeric
+responses$Age <- as.numeric(as.character(responses$Age))
+
+# Define the age breaks and labels
+age_breaks <- c(15, 18, 21, 23)
+age_labels <- c("15-17", "18-20", "21-23")
+
+# Create a factor variable for the Age column
+response_Age_Factor <- cut(responses$Age, breaks = age_breaks, labels = age_labels, right = TRUE, include.lowest = TRUE)
+response_Age_Factor
+
+
+
+```
+
+
+```{r number4}
+(response_Age_Factor <- factor(responses$Age, levels = age_labels))
+```
+
+
+
+
+
+
+
+
+
+

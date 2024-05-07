@@ -1,8 +1,11 @@
 library(readxl)
 library(dplyr)
 
-responses <- read_excel("SURVEY CS102/responses.xlsx")
+responses <- read_excel("survey/responses.xlsx")
 responses
+
+
+
 
 responses$Age <- factor(responses$Age)
 responses$Sex <- factor(responses$Sex)
