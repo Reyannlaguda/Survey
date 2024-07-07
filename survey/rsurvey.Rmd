@@ -72,7 +72,10 @@ response_Age_Factor
 (response_Age_Factor <- factor(responses$Age, levels = age_labels))
 ```
 
+```{r number5}
+#wala na kami may isugpon ma'am.
 
+```
 
 
 
